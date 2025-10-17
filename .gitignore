@@ -1,0 +1,14 @@
+# GİZLİ ANAHTARLAR
+.env
+
+# PYTHON ÇIKTILARI
+__pycache__/
+*.pyc
+venv/
+.venv/
+.ipynb_checkpoints
+
+# BÜYÜK VERİ / İNDEKSLER (GIT'e yüklenmez, boyutu çok büyüktür)
+*.csv
+*.pkl
+qdrant_db/
