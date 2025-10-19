@@ -11,7 +11,7 @@ from rag_index_builder import load_existing_store, EMBEDDING_MODEL
 from haystack import Pipeline
 from haystack.components.embedders import SentenceTransformersTextEmbedder
 from haystack_integrations.components.retrievers.qdrant import QdrantEmbeddingRetriever
-from haystack.components.builders import ChatPromptBuilder
+from haystack.components.builders.chat_prompt_builder import ChatPromptBuilder
 from haystack.dataclasses import ChatMessage
 from haystack_integrations.components.generators.google_genai import GoogleGenAIChatGenerator
 from haystack_integrations.components.common.google_genai.utils import Secret
@@ -61,7 +61,10 @@ def initialize_rag_pipeline():
     text_embedder = SentenceTransformersTextEmbedder(model=EMBEDDING_MODEL)
 
     try:
-        gemini_secret = Secret.from_env_var("GOOGLE_API_KEY")
+        # Streamlit'te çalıştırırken
+        gemini_secret = Secret.from_token(st.secrets["GOOGLE_API_KEY"])
+        # Localde çalıştırırken:
+        #gemini_secret = Secret.from_env_var("GOOGLE_API_KEY")
     except ValueError:
         st.error("HATA: GOOGLE_API_KEY ortam değişkeni ayarlanmadı veya .env dosyası okunmadı.")
         return None
