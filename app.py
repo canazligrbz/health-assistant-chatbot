@@ -105,7 +105,10 @@ def initialize_rag_pipeline():
         )
     ]
 
-    prompt_builder = ChatPromptBuilder(template=prompt_template)
+    prompt_builder = ChatPromptBuilder(
+        template=prompt_template,
+        required_variables = ["documents", "question"]
+    )
 
     # RAG Sorgu Pipeline'ı Oluşturma ve Bağlama
     rag_pipeline = Pipeline()
