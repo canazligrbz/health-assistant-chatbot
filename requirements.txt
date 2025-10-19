@@ -1,0 +1,18 @@
+pandas
+datasets
+python-dotenv                  # .env dosyasını okumak için
+pyarrow                        # Veri okuma/yazma hızı için (Örn: Parquet)
+tqdm                           # ilerleme çubukları için
+qdrant-client                  # QdrantDocumentStore ve Retriever için
+sentence-transformers==2.2.2   # SentenceTransformersDocumentEmbedder ve TextEmbedder için
+
+haystack-ai>=2.17.1            # Qdrant ve Gemini'nin istediği minimum stabil Haystack sürümü
+
+# RAG ENTEGRASYONLARI (Doğrudan Paket İsimleri)
+# pip'in hata vermesini önlemek için entegrasyonları manuel hedefliyoruz
+qdrant-haystack
+google-genai-haystack
+
+# WEB ARAYÜZÜ
+streamlit
+nest_asyncio
