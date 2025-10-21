@@ -62,9 +62,9 @@ def initialize_rag_pipeline():
 
     try:
         # Streamlit'te çalıştırırken
-        gemini_secret = Secret.from_token(st.secrets["GOOGLE_API_KEY"])
+        #gemini_secret = Secret.from_token(st.secrets["GOOGLE_API_KEY"])
         # Localde çalıştırırken:
-        #gemini_secret = Secret.from_env_var("GOOGLE_API_KEY")
+        gemini_secret = Secret.from_env_var("GOOGLE_API_KEY")
     except ValueError:
         st.error("HATA: GOOGLE_API_KEY ortam değişkeni ayarlanmadı veya .env dosyası okunmadı.")
         return None

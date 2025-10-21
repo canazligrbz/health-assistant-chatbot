@@ -44,7 +44,7 @@ def create_documents_and_save(csv_path="cleaned_patient_doctor_qa.csv"):
     Temizlenmiş CSV dosyasını okur, Haystack Document nesnelerine dönüştürür
     ve bu listeyi ileride hızlı yükleme için diske (documents.pkl) kaydeder.
     """
-    
+
     try:
         # CSV dosyasını okuma
         df = pd.read_csv(csv_path)
